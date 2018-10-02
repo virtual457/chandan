@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
-arr=plt.imread("blow.jpg")
+arr=plt.imread("chan.jpg")
 size=arr.shape
 c=[]
 res=[]
