@@ -1,5 +1,5 @@
 from gamma import *
-from tkinter import *
+from Tkinter import *
 import numpy as np
 from PIL import Image, ImageTk
 import matplotlib.pyplot as plt
