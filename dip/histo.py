@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
-arr=plt.imread("chan.jpg")
+arr=plt.imread("moon.jpg")
 size=arr.shape
 c=[]
 res=[]
@@ -16,9 +16,8 @@ for i in arr:
 		a[u]=n
 for i in a:
 	b.append(i/(size[0]*size[1]))		
-print(sum(b))
 c.append(b[0])
-for i in range(1,255):
+for i in range(1,256):
 	c.append((b[i]+c[i-1]))
 
 p=0
@@ -29,7 +28,7 @@ print(o)
 for i in arr:
 	temp=[]
 	for j in i: 		
-		d=c[j[0]]	
+		d=o[j[0]]	
 		temp.append([d,d,d])
 	res.append(temp)
 print("gamma correction over")
