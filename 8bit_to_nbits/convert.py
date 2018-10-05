@@ -1,12 +1,14 @@
+
 from PIL import Image
 import math
 import numpy as np
+import sys
 
 im = Image.open('Brain.jpg')
 
 data = np.asarray(im)
 data.setflags(write=1)
-inpt = int(input("Number of bits to be converted to "))
+inpt = system.argv[1]
 
 
 def value(intensity, bits):
