@@ -3,12 +3,16 @@
 
 # In[50]:
 
-import sys
+
 from scipy import ndimage
 import matplotlib.pyplot as plt
 
 
 # In[51]:
+
+
+get_ipython().magic('matplotlib inline')
+
 
 # In[52]:
 
@@ -25,7 +29,7 @@ from sklearn.preprocessing import normalize
 # In[164]:
 
 
-img = plt.imread(sys.argv[1])
+img = plt.imread('/home/manur/Downloads/333.jpg')
 
 
 # In[165]:

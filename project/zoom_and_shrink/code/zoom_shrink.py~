@@ -12,7 +12,7 @@ def shrink(array,factor):
 
 img = plt.imread('Brain.jpg')
 
-zoomed_img = zoom(img[:,:,0],factor = 4)
+zoomed_img = zoom(img[:,:,0],factor = 2)
 shrinked_img = shrink(img[:,:,0],factor = 2)
 
 plt.imsave('Brain_2x.png',arr=zoomed_img,cmap='gray')
