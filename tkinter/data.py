@@ -3,6 +3,8 @@ master=Tk()
 master.title("Some RANdom Db")
 def insert():
 	print("this is function insert")
+	root=Tk()
+	text2=Label(root,text="you have sucessfully opened").grid(row=0,column=0)
 def show():
 	print("this as function show")
 def dele():
@@ -18,7 +20,7 @@ def last():
 text1=Label(master,text="whatever u want")
 e1=Entry(master).grid(row=1,column=0)
 e2=Entry(master).grid(row=2,column=0)
-Button(master,text="INSERT",command=insert).grid(row=1,column=5)
+Button(master,text="INSE",command=insert).grid(row=1,column=5)
 Button(master,text="SHOW",command=show ).grid(row=2,column=5)
 Button(master,text="DELE",command=dele).grid(row=3,column=5)
 Button(master,text="FIRST",command=first).grid(row=5,column=1)
