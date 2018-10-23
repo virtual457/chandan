@@ -1,10 +1,12 @@
 from Tkinter import *
+from insert import *
 master=Tk()
 master.title("Some RANdom Db")
 def insert():
 	print("this is function insert")
-	root=Tk()
-	text2=Label(root,text="you have sucessfully opened").grid(row=0,column=0)
+	insert(e1.get(),e2.get())
+	#root=Tk()
+	#text2=Label(root,text="you have sucessfully opened").grid(row=0,column=0)
 def show():
 	print("this as function show")
 def dele():
