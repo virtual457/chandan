@@ -1,14 +1,14 @@
 from Tkinter import *
-from decrypt import *
+from encrypt import *
 enc=[]
 def show():
-	enc=decrypt(e1.get())
+	enc=encrypt(e1.get())
 	e="".join(map(str,enc))
 	blank.insert(0,e)
 master=Tk()
-master.title("HILL decryptor")
-First=Label(master,text="mesage to be decrypted").grid(row=0,column=0)
-answer=Label(master,text="decrypted message").grid(row=2,column=0)
+master.title("hill encryptor")
+First=Label(master,text="message to be encrypted").grid(row=0,column=0)
+answer=Label(master,text="encrypted message").grid(row=2,column=0)
 e1=Entry(master)
 blank=Entry(master)
 blank.grid(row=2,column=1)

@@ -1,5 +1,6 @@
-import numpy as np
+
 def encrypt(c):
+	import numpy as np
 	f=[]
 	f=c
 	a=[]
@@ -22,21 +23,16 @@ def encrypt(c):
 		key=0
 		while (i!=a[key]):
 			key=key+1
-			print(key)
 		if (i==a[key]):
 			m.append(key)
 	print(m)
 	for i in range(0,len(m)-1,2):
 		n=[[m[i]],[m[i+1]]]
 		x=np.array(n)
-		print(x)
 		y=np.matmul(z,x)
-		print(y)
 		r=y%26
-		print(r)
 		res.append(a[r[0][0]])
 		res.append(a[r[1][0]])
-		print(res)
 	print("\n\n")
 	print("plain text")						
 	print("".join(map(str,f)))					
@@ -45,4 +41,3 @@ def encrypt(c):
 	print("".join(map(str,res)))					
 	print("\n\n")								
 	return res					
-encrypt("varuna")
