@@ -6,6 +6,7 @@ def show():
 	e="".join(map(str,enc))
 	blank.insert(0,e)
 master=Tk()
+master.title("playfair decryptor")
 First=Label(master,text="enter the customer last name").grid(row=0,column=0)
 Last=Label(master,text="message to be decrypted").grid(row=1,column=0)
 answer=Label(master,text="decrypted message").grid(row=2,column=0)
