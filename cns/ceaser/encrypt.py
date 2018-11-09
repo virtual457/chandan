@@ -11,7 +11,6 @@ def encrypt(c,f):
 		key=0
 		while (i!=a[key]):
 			key=key+1
-			print(key)
 		if (i==a[key]):
 			key=key+add	
 		res.append(a[key])	
