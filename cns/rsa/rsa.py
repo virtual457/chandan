@@ -58,16 +58,21 @@ def decrypt(pk, ciphertext):
     key, n = pk
     plain = [chr((char ** key) % n) for char in ciphertext]
     return ''.join(plain)
-print "RSA Encrypter/ Decrypter"
-p = int(raw_input("Enter a prime number (17, 19, 23, etc): "))
-q = int(raw_input("Enter another prime number (Not one you entered above): "))
-print "Generating your public/private keypairs now . . ."
+print "RSA Encrypter/ Decrypter \n"
+p = int(raw_input("Enter a prime number: \n"))
+q = int(raw_input("Enter another prime number (Not one you entered above):\n "))
+print "Generating your public/private keypairs now . . .\n"
 public, private = generate_keypair(p, q)
-print "Your public key is ", public ," and your private key is ", private
-message = raw_input("Enter a message to encrypt with your private key: ")
+print "Your public key is \n", public 
+print "\n" 
+print " and your private key is \n", private 
+print "\n"
+message = raw_input("Enter a message to encrypt with your private key:\n ")
 encrypted_msg = encrypt(private, message)
-print "Your encrypted message is: "
+print "Your encrypted message is: \n"
+print "\n"
 print ''.join(map(lambda x: str(x), encrypted_msg))
-print "Decrypting message with public key ", public ," . . ."
-print "Your message is:"
+print "\n"
+print "Decrypting message with public key \n", public ,"\n . . .\n"
+print "Your message is:\n"
 print decrypt(public, encrypted_msg)
