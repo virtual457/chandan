@@ -74,5 +74,6 @@ print "\n"
 print ''.join(map(lambda x: str(x), encrypted_msg))
 print "\n"
 print "Decrypting message with public key \n", public ,"\n . . .\n"
+print "\n"
 print "Your message is:\n"
 print decrypt(public, encrypted_msg)
