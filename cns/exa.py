@@ -36,6 +36,10 @@ def multiplicative_inverse(e, phi):
     
     if temp_phi == 1:
         return d + phi
+
+'''
+Tests to see if a number is prime.
+'''
 def is_prime(num):
     if num == 2:
         return True
@@ -51,42 +55,54 @@ def generate_keypair(p, q):
         raise ValueError('Both numbers must be prime.')
     elif p == q:
         raise ValueError('p and q cannot be equal')
-
+    #n = pq
     n = p * q
-phi = (p-1) * (q-1)
+
+    #Phi is the totient of n
+    phi = (p-1) * (q-1)
+
+    #Choose an integer e such that e and phi(n) are coprime
     e = random.randrange(1, phi)
+
+    #Use Euclid's Algorithm to verify that e and phi(n) are comprime
     g = gcd(e, phi)
     while g != 1:
         e = random.randrange(1, phi)
         g = gcd(e, phi)
+
+    #Use Extended Euclid's Algorithm to generate the private key
     d = multiplicative_inverse(e, phi)
+    
+    #Return public and private keypair
+    #Public key is (e, n) and private key is (d, n)
     return ((e, n), (d, n))
 
 def encrypt(pk, plaintext):
+    #Unpack the key into it's components
     key, n = pk
-    cipher = [(ord(char) ** key) % n for char in plaintext]
+    #Convert each letter in the plaintext to numbers based on the character using a^b mod m
+    cipher = [(ord(char) ** key) % n for char in plaintext]    #Return the array of bytes
     return cipher
 
 def decrypt(pk, ciphertext):
+    #Unpack the key into its components
     key, n = pk
+    #Generate the plaintext based on the ciphertext and key using a^b mod m
     plain = [chr((char ** key) % n) for char in ciphertext]
+    #Return the array of bytes as a string
     return ''.join(plain)
     
 
-
 def enc(p,q,message):
-    print "RSA Encrypter/ Decrypter"
     print "Generating your public/private keypairs now . . ."
     public, private = generate_keypair(p, q)
     print "Your public key is ", public ," and your private key is ", private
     encrypted_msg = encrypt(private, message)
-    
     print "Your encrypted message is: "
-    print ''.join(map(lambda x: str(x), encrypted_msg))
+    res=''.join(map(lambda x: str(x), encrypted_msg))
+    print res
     print "Decrypting message with public key ", public ," . . ."
     print "Your message is:"
-    return print decrypt(public, encrypted_msg)
-    return ''.join(map(lambda x: str(x), encrypted_msg))
-chan,dhan=enc(17,19,"chandan")
-print (chan)
-print (dhan)
+    chan =decrypt(public, encrypted_msg)
+    print chan
+    return public ,private,res,chan

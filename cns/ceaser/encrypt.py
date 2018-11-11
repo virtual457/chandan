@@ -1,5 +1,6 @@
 def encrypt(c,f):
 	a=[]
+	f=f.lower()
 	add=int(c)
 	index={}
 	a=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
@@ -11,7 +12,9 @@ def encrypt(c,f):
 		while (i!=a[key]):
 			key=key+1
 		if (i==a[key]):
-			key=key+add	
+			key=key+add
+		if(key >=26 or key <=0):
+			key=key%26		
 		res.append(a[key])	
 	print("\n\n")
 	print("plain text")						

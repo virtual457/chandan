@@ -6,7 +6,7 @@ def show():
 	e="".join(map(str,enc))
 	blank.insert(0,e)
 master=Tk()
-master.title("hill encryptor")
+master.title("HILL ENCYPTOR")
 First=Label(master,text="message to be encrypted").grid(row=0,column=0)
 answer=Label(master,text="encrypted message").grid(row=2,column=0)
 e1=Entry(master)

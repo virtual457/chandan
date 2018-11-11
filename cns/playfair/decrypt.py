@@ -91,10 +91,10 @@ def decrypt(c,f):
 	print("constructed matrix is")					
 	print(Matrix)
 	print("\n\n")
-	print("plain text")						
+	print("encypted text")						
 	print("".join(map(str,f)))					
 	print("\n\n")
-	print("encrypted text")						
+	print("decrypted text")						
 	print("".join(map(str,res)))					
 	print("\n\n")								
 	return res					

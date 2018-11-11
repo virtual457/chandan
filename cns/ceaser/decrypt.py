@@ -1,5 +1,6 @@
 def decrypt(c,f):
 	a=[]
+	f=f.lower()
 	add=int(c)
 	index={}
 	a=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
@@ -11,13 +12,15 @@ def decrypt(c,f):
 		while (i!=a[key]):
 			key=key+1
 		if (i==a[key]):
-			key=key-add	
+			key=key-add
+		if(key >=26 or key <=0):
+			key=key%26				
 		res.append(a[key])	
 	print("\n\n")
-	print("plain text")						
+	print("encrypted text")						
 	print("".join(map(str,f)))					
 	print("\n\n")
-	print("encrypted text")						
+	print("derypted text")						
 	print("".join(map(str,res)))					
 	print("\n\n")								
 	return res					
